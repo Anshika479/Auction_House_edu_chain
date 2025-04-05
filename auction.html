@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction_House</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+    <script src="auction.js" defer></script>
+    <style>
+        .auction-button {
+            background: #ffffff;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+            text-align: left;
+        }
+
+        .auction-button:hover {
+            background: #007BFF;
+            color: #ffffff;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Auction_House</h1>
+        <div id="connect-wallet">
+            <button id="connectButton" class="button">Connect Wallet</button>
+        </div>
+
+        <div id="menu-section" style="display: none;">
+            <button id="createAuctionButton" class="button">Create Auction</button>
+            <button id="viewAuctionsButton" class="button">View Auctions</button>
+        </div>
+
+        <div id="create-auction-section" style="display: none;">
+            <h2>Create Auction</h2>
+            <div class="input-group">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" placeholder="Enter the item name">
+            </div>
+            <div class="input-group">
+                <label for="endTime">Auction Duration (seconds):</label>
+                <input type="text" id="endTime" placeholder="Enter duration in seconds">
+            </div>
+            <button id="initializeAuctionButton" class="button">Create Auction</button>
+        </div>
+
+        <div id="view-auctions-section" style="display: none;">
+            <h2>Ongoing Auctions</h2>
+            <ul id="ongoingAuctions"></ul>
+            <h2>Completed Auctions</h2>
+            <ul id="completedAuctions"></ul>
+        </div>
+
+        <div id="auction-details-section" style="display: none;">
+            <h2>Auction Details</h2>
+            <p><strong>Item Name:</strong> <span id="auctionItemName">N/A</span></p>
+            <p><strong>Auction End Time:</strong> <span id="auctionEndTime">N/A</span></p>
+            <p><strong>Highest Bid:</strong> <span id="highestBid">N/A</span></p>
+            <p><strong>Highest Bidder:</strong> <span id="highestBidder">N/A</span></p>
+            <div class="input-group">
+                <label for="bidAmount">Place Bid (ETH):</label>
+                <input type="text" id="bidAmount" placeholder="Enter your bid amount">
+            </div>
+            <button id="bidButton" class="button">Place Bid</button>
+            <button id="endAuctionButton" class="button">End Auction</button>
+            <button id="backButton" class="button">Back to Auctions</button>
+        </div>
+
+        <div id="ongoingAuctions">
+            <!-- Buttons will be dynamically populated here -->
+          </div>
+          
+
+        <div id="status">
+            <h3>Status</h3>
+            <p id="statusText">Not connected.</p>
+        </div>
+    </div>
+</body>
+</html>

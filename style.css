@@ -1,0 +1,172 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f5e6d7, #cfe8f6);
+    color: #057a8d;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundFade 8s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundFade {
+    0% {
+        background: linear-gradient(120deg, #f5e6d7, #cfe8f6);
+    }
+    50% {
+        background: linear-gradient(120deg, #cfe8f6, #a4d4f5);
+    }
+    100% {
+        background: linear-gradient(120deg, #a4d4f5, #f5e6d7);
+    }
+}
+
+/* Wavy Animation */
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 200px;
+    background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1440 320%22%3E%3Cpath fill=%22%23cfe8f6%22 d=%22M0,320L40,288C80,256,160,192,240,170.7C320,149,400,171,480,165.3C560,160,640,128,720,122.7C800,117,880,139,960,170.7C1040,203,1120,245,1200,240C1280,235,1360,181,1400,154.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z%22/%3E%3C/svg%3E') repeat-x;
+    animation: wave 10s linear infinite;
+}
+
+/* Container Styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styles */
+h1 {
+    font-size: 2.5em;
+    color: #057a8d;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #057a8d;
+    margin-bottom: 10px;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Text Styles */
+p {
+    font-size: 1.1em;
+    color: #057a8d;
+    margin: 10px 0;
+}
+
+/* Button Styles */
+button {
+    background-color: #057a8d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #046f7c;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/* Input Field Styles */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #057a8d;
+    outline: none;
+}
+
+/* Auction Details */
+.auction-details {
+    margin-top: 20px;
+}
+
+/* Status Section */
+#status {
+    margin-top: 20px;
+}
+
+#statusText {
+    font-size: 1.1em;
+    color: #046f7c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
